@@ -181,7 +181,7 @@ public class RhymersJUnitTest {
 		Assert.assertEquals(false, stack.isFull());
 		for(int i=0;i<12;i++)
 			stack.push(testValue);
-		Assert.assertEquals(false, stack.isFull());
+		Assert.assertEquals(false, stack.isFull()); 
 	}
 	
 	@Test

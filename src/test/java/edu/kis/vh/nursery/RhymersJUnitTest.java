@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import edu.kis.vh.nursery.list.IntArrayStack;
+import edu.kis.vh.nursery.list.IntLinkedList;
 
 public class RhymersJUnitTest {
 
@@ -127,6 +128,65 @@ public class RhymersJUnitTest {
 	@Test
 	public void testArrayStackCheckLast() {
 		IntArrayStack stack = new IntArrayStack();
+		
+		stack.push(1);
+		Assert.assertEquals(1, stack.checkLast());
+		stack.push(2);
+		stack.push(3);
+		Assert.assertEquals(3, stack.checkLast());
+	}
+	
+	//asdasdasd
+	@Test
+	public void testListStackPush() {
+		IntLinkedList stack = new IntLinkedList();
+		int testValue = 4;
+		stack.push(testValue);
+		int result = stack.checkLast();
+		Assert.assertEquals(testValue, result);
+		
+	}
+	
+	@Test
+	public void testListStackPop() {
+		IntLinkedList stack = new IntLinkedList();
+		int testValue = 4;
+		stack.push(testValue);
+		int result = stack.pop();
+		Assert.assertEquals(result, testValue);
+	}
+	
+	@Test
+	public void testListStackError() {
+		IntLinkedList stack = new IntLinkedList();
+		final int error = -1;
+		Assert.assertEquals(error, stack.getError());
+	}
+	
+	@Test
+	public void testListStackIsEmpty() {
+		IntLinkedList stack = new IntLinkedList();
+		int testValue = 4;
+		stack.push(testValue);
+		Assert.assertEquals(false, stack.isEmpty());
+		stack.pop();
+		Assert.assertEquals(true, stack.isEmpty());
+	}
+	
+	@Test
+	public void testListStackIsFull() {
+		IntLinkedList stack = new IntLinkedList();
+		int testValue = 4;
+		
+		Assert.assertEquals(false, stack.isFull());
+		for(int i=0;i<12;i++)
+			stack.push(testValue);
+		Assert.assertEquals(false, stack.isFull());
+	}
+	
+	@Test
+	public void testListStackCheckLast() {
+		IntLinkedList stack = new IntLinkedList();
 		
 		stack.push(1);
 		Assert.assertEquals(1, stack.checkLast());

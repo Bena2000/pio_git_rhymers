@@ -6,7 +6,7 @@ import edu.kis.vh.nursery.list.IntStackInterface;
 public class defaultCountingOutRhymer {
 
 	private IntStackInterface numbers;
-    private final static int EMPTYERR = 0;
+    private final static int EMPTYERR = -1;
 
     public defaultCountingOutRhymer() {
         numbers = new IntArrayStack();

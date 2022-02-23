@@ -4,13 +4,13 @@ public interface IntArrayStackInterface {
 
 	static final int ERROR = -1;
 
-    public void push(int in);
+	public void push(int in);
 
-    public int pop();
+	public int pop();
 
-    public int getError();
+	public int getError();
 
-    public boolean isEmpty();
+	public boolean isEmpty();
 
     public boolean isFull();
 

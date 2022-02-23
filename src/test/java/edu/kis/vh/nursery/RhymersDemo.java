@@ -1,7 +1,5 @@
 package edu.kis.vh.nursery;
 
-import edu.kis.vh.nursery.defaultCountingOutRhymer;
-import edu.kis.vh.nursery.HanoiRhymer;
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
 import edu.kis.vh.nursery.factory.Rhymersfactory;
 
@@ -13,11 +11,11 @@ class RhymersDemo {
 	private static final int _15 = 15;
 
 	public static void main(String[] args) {
-		testRhymers();
+		Rhymersfactory factory = new DefaultRhymersFactory();
+		testRhymers(factory);
 	}
 
-	private static void testRhymers() {
-		Rhymersfactory factory = new DefaultRhymersFactory();
+	private static void testRhymers(Rhymersfactory factory) {
 		
 		defaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
 				factory.GetFIFORhymer(), factory.GetHanoiRhymer()};

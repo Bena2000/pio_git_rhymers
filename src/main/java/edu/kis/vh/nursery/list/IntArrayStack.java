@@ -1,17 +1,17 @@
 package edu.kis.vh.nursery.list;
 
 public class IntArrayStack implements IntArrayStackInterface {
-    private final int SIZE = 12;
-    private final int TOTALBEGIN = -1;
-    private final int[] NUMBERS = new int[SIZE];
-    private int TOTAL = TOTALBEGIN;
+    private static final int SIZE = 12;
+    private static final int TOTALBEGIN = -1;
+    private final int[] numbers = new int[SIZE];
+    private int total = TOTALBEGIN;
 
     public void push(int in){
-        NUMBERS[++TOTAL] = in;
+        numbers[++total] = in;
     }
 
     public int pop(){
-        return NUMBERS[TOTAL--];
+        return numbers[total--];
     }
 
     public int getError() {
@@ -19,14 +19,14 @@ public class IntArrayStack implements IntArrayStackInterface {
     }
 
     public boolean isEmpty(){
-        return TOTAL == TOTALBEGIN;
+        return total == TOTALBEGIN;
     }
 
     public boolean isFull(){
-        return TOTAL == SIZE - 1;
+        return total == SIZE - 1;
     }
 
     public int checkLast(){
-        return NUMBERS[TOTAL];
+        return numbers[total];
     }
 }

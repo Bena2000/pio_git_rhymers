@@ -4,6 +4,7 @@ import edu.kis.vh.nursery.FIFORhymer;
 import edu.kis.vh.nursery.HanoiRhymer;
 import edu.kis.vh.nursery.defaultCountingOutRhymer;
 import edu.kis.vh.nursery.list.IntArrayStack;
+import edu.kis.vh.nursery.list.IntLinkedList;
 
 public class ArrayStackRhymersFactory implements Rhymersfactory {
 
@@ -14,7 +15,7 @@ public class ArrayStackRhymersFactory implements Rhymersfactory {
 
 	@Override
 	public defaultCountingOutRhymer GetFalseRhymer() {
-		return new defaultCountingOutRhymer(new IntArrayStack());
+		return new defaultCountingOutRhymer(new IntLinkedList());
 	}
 
 	@Override

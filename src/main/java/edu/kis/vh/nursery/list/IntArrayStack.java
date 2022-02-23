@@ -1,42 +1,32 @@
 package edu.kis.vh.nursery.list;
 
 public class IntArrayStack implements IntArrayStackInterface {
-    private static final int _12 = 12;
+    private final int SIZE = 12;
+    private final int TOTALBEGIN = -1;
+    private final int[] NUMBERS = new int[SIZE];
+    private int TOTAL = TOTALBEGIN;
 
-
-    private static final int DEFAULT_VALUE = 0;
-    /**
-     *
-     */
-    static final int EMPTY = 0;
-
-    private final int[] NUMBERS = new int[_12];
-
-    public int total = DEFAULT_VALUE;
-
-    public void countIn(int in) {
-        if (!isFull())
-            NUMBERS[++total] = in;
+    public void push(int in){
+        NUMBERS[++TOTAL] = in;
     }
 
-    public boolean callCheck() {
-        return total == EMPTY;
+    public int pop(){
+        return NUMBERS[TOTAL--];
     }
 
-    @Override
-    public boolean isFull() {
-        return total == 11;
+    public int getError() {
+        return ERROR;
     }
 
-    public int peekaboo() {
-        if (callCheck())
-            return EMPTY;
-        return NUMBERS[total];
+    public boolean isEmpty(){
+        return TOTAL == TOTALBEGIN;
     }
 
-    public int countOut() {
-        if (callCheck())
-            return EMPTY;
-        return NUMBERS[total--];
+    public boolean isFull(){
+        return TOTAL == SIZE - 1;
+    }
+
+    public int checkLast(){
+        return NUMBERS[TOTAL];
     }
 }

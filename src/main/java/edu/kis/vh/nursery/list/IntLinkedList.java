@@ -1,41 +1,44 @@
 package edu.kis.vh.nursery.list;
 
-public class IntLinkedList implements IntArrayStackInterface{
+public class IntLinkedList implements IntArrayStackInterface {
 
-	Node last;
-	int i;
+    private Node last;
 
-	public void push(int i) {
-		if (last == null)
-			last = new Node(i);
-		else {
-			last.next = new Node(i);
-			last.next.prev = last;
-			last = last.next;
-		}
-	}
+    public void push(int i) {
+        if (last == null)
+            last = new Node(i);
+        else {
+            last.setNext(new Node(i));
+            last.getNext().setPrev(last);
+            last = last.getNext();
+        }
+    }
 
-	public boolean isEmpty() {
-		return last == null;
-	}
+    public boolean isEmpty() {
+        return last == null;
+    }
 
-	@Override
-	public boolean isFull() {
-		return false;
-	}
+    public boolean isFull() {
+        return false;
+    }
 
-	public int top() {
-		if (isEmpty())
-			return IntArrayStack.EMPTY;
-		return last.value;
-	}
+    public int checkLast() {
+        if (isEmpty())
+            return ERROR;
+        return last.getValue();
+    }
 
-	public int pop() {
-		if (isEmpty())
-			return IntArrayStack.EMPTY;
-		int ret = last.value;
-		last = last.prev;
-		return ret;
-	}
+    public int pop() {
+        if (isEmpty())
+            return ERROR;
+        int ret = last.getValue();
+        last = last.getPrev();
+        return ret;
+    }
+
+    @Override
+    public int getError() {
+        return ERROR;
+    }
 
 }

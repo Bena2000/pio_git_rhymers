@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery.list;
 
-public class IntArrayStack implements IntArrayStackInterface {
+public class IntArrayStack implements IntStackInterface {
     private static final int SIZE = 12;
     private static final int TOTALBEGIN = -1;
     private final int[] numbers = new int[SIZE];

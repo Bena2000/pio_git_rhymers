@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery.list;
 
-public interface IntArrayStackInterface {
+public interface IntStackInterface {
 
 	static final int ERROR = -1;
 

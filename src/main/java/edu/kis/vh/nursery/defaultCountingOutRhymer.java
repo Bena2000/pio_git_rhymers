@@ -1,18 +1,18 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.list.IntArrayStack;
-import edu.kis.vh.nursery.list.IntArrayStackInterface;
+import edu.kis.vh.nursery.list.IntStackInterface;
 
 public class defaultCountingOutRhymer {
 
-	private IntArrayStackInterface numbers;
-    private final static int EMPTYERR = 0;
+	private IntStackInterface numbers;
+    private final static int EMPTYERR = -1;
 
     public defaultCountingOutRhymer() {
         numbers = new IntArrayStack();
     }
 
-    public defaultCountingOutRhymer(IntArrayStackInterface numbers) {
+    public defaultCountingOutRhymer(IntStackInterface numbers) {
         this.numbers = numbers;
     }
 

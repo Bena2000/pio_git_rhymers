@@ -1,6 +1,6 @@
 package edu.kis.vh.nursery.list;
 
-public class IntLinkedList implements IntArrayStackInterface {
+public class IntLinkedList implements IntStackInterface {
 
     private Node last;
 
